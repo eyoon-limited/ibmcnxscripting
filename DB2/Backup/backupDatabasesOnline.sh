@@ -12,6 +12,6 @@ databases=$(db2 list database directory | grep alias | awk '{print $4}' | sort)
 for database in ${databases[@]}
 do
  echo $database
- db2 backup database $database ONLINE to $DBBACKUPPATH COMPRESS INCLUDE LOGS
+ db2 backup database $database ONLINE to $DBBACKUPPATH INCLUDE LOGS
 done
 
